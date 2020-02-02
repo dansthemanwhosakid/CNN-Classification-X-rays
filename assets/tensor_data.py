@@ -12,7 +12,7 @@ train_img_gen = ImageDataGenerator(rescale=1./255,
 train_data = train_img_gen = train_img_gen.flow_from_directory(batch_size = 32,
                                                                directory = train_directory,
                                                                shuffle = True,
-                                                               target_size = (244,244),
+                                                               target_size = (224,224),
                                                                class_mode = 'binary'
                                                               )
 test_img_gen = ImageDataGenerator(rescale=1./255)
@@ -20,6 +20,6 @@ test_img_gen = ImageDataGenerator(rescale=1./255)
 test_data = test_img_gen.flow_from_directory(batch_size = 32,
                                              directory = test_directory,
                                              shuffle = True,
-                                             target_size = (244,244),
+                                             target_size = (224,224),
                                              class_mode = 'binary'
                                                               )
