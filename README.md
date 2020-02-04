@@ -23,9 +23,9 @@ The dataset has the following directory structure:
 </pre>
 
 To the naked eye, there are visual differences between the x-rays of pneumonia patients to normal patients.
-![pneumonia](./plots/pneumonia_xray.png)
+![pneumonia](./plots/pneumonia.png)
 
-![normal](./plots/normal_xray.png)
+![normal](./plots/normal.png)
 
 Since pneumonia causes lungs to inflame and fill up with fluid, there is more 'cloudiness' that fill up the volume within the ribcage for pneumonia patients. It also appears that normal patients have a brighter and whiter ribcages along their edges than their pneumonia counterparts.
 
@@ -37,7 +37,7 @@ In the EDA process, I am observing a few trends. First, the classes are unbalanc
 
 The second graph plots the distribtion of the image size based on its pixels. As you can see there is a pretty big difference in x-ray image sizes between normal and pneumonia images. The normal average pixel size is 2.4 million vs pneumonia's 1.1 million. Furthermore, some images are as small as 50,000 pixels and others as large as 7 million. For the model, the images are normalized by being resized to 224 x 224 pixels.
 
-![pixels](./plots/pixel_comparison.png)
+![pixels](./plots/distribution.png)
 
 
 ## Modeling:
