@@ -3,7 +3,7 @@
 
 ## Problem Statement:
 ---
-The objective is to implement a Convolutional Neural Network (CNN) to classify whether patients have pneumonia based on their chest x-ray images. In this binary classification problem, predicting pneumonia is the positive target class and not having pneumonia is the non-target class. As a result, there are two types of misdiagnosis errors, type I (false positives) and type II (false negatives). Though both errors are misdiagnoses, type II errors are worse than type I errors. A type II error is to predict a patient as not having a pneumonia, but in reality they actually do. In contrast, a type I error is to predict a patient to have pneumonia, but in reality they do not. Type II errors obviously have dire consequences because diagnosing pneumonia earlier and alerting a patient is the best course of action to improve chances for better recovery. As a result, we will focus on minimizing type II errors by optimizing the sensitivity rate. 
+The objective is to implement a Convolutional Neural Network (CNN) to classify whether patients have pneumonia based on their chest x-ray images. In this binary classification problem, predicting pneumonia is the positive target class and not having pneumonia is the non-target class. As a result, there are two types of misdiagnosis errors, type I (false positives) and type II (false negatives). Though both errors are misdiagnoses, type II errors are worse than type I errors. A type II error is to predict a patient as not having a pneumonia, but in reality they actually do. In contrast, a type I error is to predict a patient to have pneumonia, but in reality they do not. Type II errors obviously have dire consequences because diagnosing pneumonia earlier and alerting a patient is the best course of action to improve chances for better recovery. As a result, we will focus on minimizing type II errors by optimizing the sensitivity (recall) rate, which is the proportion of patients with pneumonia who test positive.
 
 
 ## Data:
@@ -22,8 +22,12 @@ The dataset has the following directory structure:
     |______ <b>NORMAL</b>: [normal_0.jpg, normal_1.jpg, normal_2.jpg ...]
 </pre>
 
+#### Pneumonia X-Rays
+
 To the naked eye, there are visual differences between the x-rays of pneumonia patients to normal patients.
 ![pneumonia](./plots/pneumonia.png)
+
+#### Normal X-Rays
 
 ![normal](./plots/normal.png)
 
@@ -70,8 +74,12 @@ The first Conv2D is the input layer which takes in the images that have been con
 
 ## Model Evaluation:
 ---
+After running the CNN with 20 epochs with batch sizes of 128, it appears both training and validation accuracy scores converge to higher accuracy percentages, meaning the model is not overfit. Furthermore, the loss score for both training and validation decrease overall as the number of epochs increase. The model is able to predict whether a patient has pneumonia with **86.7% accuracy**, which is not bad, but can definitely be better.
 
+![acc_loss](./plots/accuracy_loss.png)
+
+In our simple model, we were able to obtain a precision of 59.87% and recall of 70.85% which can definitely be improved.
 
 ## Future Steps:
 ---
-There is ALWAYS a need for future steps. 
+There is always a need for future steps. I am currently testing out CNN models with more layers and layers and different layers such as separable convolutions. Check back for improvements!
